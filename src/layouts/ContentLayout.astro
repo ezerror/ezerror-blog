@@ -20,7 +20,7 @@ export interface Props {
   titleSize : String;
 }
 
-const { title, date, titleSize } = Astro.props;
+const { title, date, titleSize, tag} = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString("en-us", {
   year: "numeric",
   month: "short",
@@ -69,6 +69,17 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
             {title}
           </span>
         </h1> -->
+        <div>
+        {
+          tag.map((t: String) => {
+            return (
+              <span class="inline-block bg-primary-blue text-text-heading text-xs font-bold tracking-wide uppercase rounded-full px-3 py-1 mr-2 mb-2 ">
+                #{t}
+              </span>
+            )
+          })
+        }
+        </div>
         <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
         <slot name="content" />
       </section>
