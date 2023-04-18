@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Ezerror的技术博客";
 export const SITE_DESCRIPTION ="Ezerror的技术博客";
-// export const TWITTER_HANDLE = "@yourtwitterhandle";
+export const TWITTER_HANDLE = "@yourtwitterhandle";
 export const MY_NAME = "Ezerror";
 
 // setup in astro.config.mjs
