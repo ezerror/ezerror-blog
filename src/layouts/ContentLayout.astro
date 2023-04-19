@@ -18,9 +18,10 @@ export interface Props {
   title: string;
   date: Date;
   titleSize : String;
+  tags : Array<String>;
 }
 
-const { title, date, titleSize, tag} = Astro.props;
+const { title, date, titleSize, tags} = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString("en-us", {
   year: "numeric",
   month: "short",
@@ -71,11 +72,15 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
         </h1> -->
         <div>
         {
-          tag.map((t: String) => {
+          tags.map((t: String) => {
             return (
+              <span class="not-prose ">
+              <a class ="unset" href={ `/tags/${t.toLowerCase()}`}>
               <span class="inline-block bg-primary-blue text-text-heading text-xs font-bold tracking-wide uppercase rounded-full px-3 py-1 mr-2 mb-2 ">
                 #{t}
               </span>
+              </a>
+            </span>
             )
           })
         }
