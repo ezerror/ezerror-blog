@@ -8,7 +8,7 @@ const baseSchema = z.object({
     invalid_type_error: "title must be a string",
   }),
   titleSize: z.string().default("middle"),
-  tag: z.array(z.string()).default([]),
+  tags: z.array(z.string()).default([]),
   date: z.date({
     required_error: "Required frontmatter missing: date",
     invalid_type_error:

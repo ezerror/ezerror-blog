@@ -1,0 +1,34 @@
+---
+import { readAll } from "../lib/markdoc/read";
+import { blog } from "../lib/markdoc/frontmatter.schema";
+import Tag from "../components/Tag.astro";
+import { SITE_TITLE } from "../config";
+
+import PageLayout from "../layouts/PageLayout.astro";
+import PageMeta from "../components/PageMeta.astro";
+const posts = await readAll({
+  directory: "blog",
+  frontmatterSchema: blog,
+});
+
+let tags: string[] = [];
+const filteredPosts = posts.filter((p) => p.frontmatter.draft !== true);
+filteredPosts.forEach((post) => {
+  tags = [...tags, ...post.frontmatter.tags]
+    .map((tag) => tag)
+    .filter(
+      (value: string, index: number, self: string[]) =>
+        self.indexOf(value) === index
+    );
+});
+// const tags = posts.map((p) => p.frontmatter.tag)
+---
+
+<PageLayout>
+  <PageMeta title={`TAG | ${SITE_TITLE}`} slot="meta" />
+  <section slot="main">
+    <ul>
+      {tags.map(tag => <Tag name={tag} size="lg" />)}
+    </ul>
+  </section>
+</PageLayout>

@@ -3,7 +3,7 @@ external: false
 title: "开发日志02：预期工作"
 description: "我们把整个编程语言的工作抽象一下，编程语言需要干什么？"
 date: 2022-02-17
-
+tags: ['java','创建一个新的编程语言','2']
 titleSize: small
 ---
 

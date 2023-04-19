@@ -3,7 +3,7 @@ external: false
 title: "开发日志01：创建一个新的编程语言"
 description: "开发日志01：创建一个新的编程语言"
 date: 2022-02-17
-tag: ['java','创建一个新的编程语言']
+tags: ['java','创建一个新的编程语言']
 titleSize: small
 ---
 
