@@ -29,7 +29,7 @@ const baseSchema = z.object({
 export const blog = z.discriminatedUnion("external", [
   // markdown
   baseSchema.extend({
-    external: z.literal(false),
+    external: z.literal(false).default(false),
     description: z.optional(z.string()),
     ogImagePath: z.optional(z.string()),
     canonicalUrl: z.optional(z.string()),
