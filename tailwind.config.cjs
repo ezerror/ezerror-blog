@@ -33,6 +33,10 @@ module.exports = {
         border: {
           code: "rgb(var(--color-border-code) / <alpha-value>)",
         },
+        scrollbar: {
+          backgroundColor: "rgb(var(--scrollbar-background-color) / <alpha-value>)",
+          thumbColor:  "rgb(var(--scrollbar-thumb-color) / <alpha-value>)",
+        },
       },
       typography: (theme) => ({
         DEFAULT: {

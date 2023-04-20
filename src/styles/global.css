@@ -43,6 +43,10 @@
 
         /* tailwind orange-100 #ffedd5 */
         --color-border-code: 255 237 213;
+        
+        
+        --scrollbar-background-color: 239 241 245;
+        --scrollbar-thumb-color: 90 96 114;
     }
 
     /* dark theme */
@@ -78,6 +82,9 @@
 
         /* Tailwind yellow-100 #fef9c3 */
         --color-border-code: 254 243 199;
+        
+        --scrollbar-background-color:43 51 59;
+        --scrollbar-thumb-color: 156 168 180;
     }
 
     :root {
@@ -213,4 +220,22 @@
     }
 
     /* ------ REUSABLE UTILS - END ------ */
+}
+
+
+@layer utilities {
+    @variants responsive {
+        ::-webkit-scrollbar {
+            width: var(--scrollbar-width, 12px);
+            height: var(--scrollbar-height, 12px);
+            background-color: theme('colors.scrollbar.backgroundColor');
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: theme('colors.scrollbar.thumbColor');
+            border: 2px solid theme('colors.scrollbar.backgroundColor');
+        }
+
+    }
 }
